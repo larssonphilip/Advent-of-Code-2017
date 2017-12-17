@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Day2 {
-    private int min, max, checksum, divsum;
+    private int min, max, checkSum, divSum;
 
     public int partOne() throws IOException{
         BufferedReader br = new BufferedReader(new FileReader("./input.txt"));
@@ -14,11 +14,11 @@ public class Day2 {
             int[] holder = toIntArray(numbs);
             min = getMin(holder);
             max = getMax(holder);
-            checksum += (max - min);
+            checkSum += (max - min);
         }
         br.close();
 
-        return checksum;
+        return checkSum;
     }
 
     public int partTwo() throws IOException{
@@ -28,12 +28,11 @@ public class Day2 {
         while((textline = br.readLine()) != null) {
             String[] numbs = textline.split("/");
             int[] holder = toIntArray(numbs);
-            divsum += getEvenDivider(holder);
-
+            divSum += getEvenDivider(holder);
         }
         br.close();
 
-        return divsum;
+        return divSum;
     }
 
     public int getEvenDivider(int[] array) {
